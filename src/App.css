@@ -1,0 +1,11 @@
+.App {
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px double rgb(17, 133, 27);
+  text-align: center;
+  font-weight: 600;
+  font-family:'Times New Roman', Times, serif;
+  background-color: rgb(141, 209, 141);
+}
