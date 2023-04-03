@@ -1,0 +1,21 @@
+@keyframes blink {
+    0% { color: yellow; }
+    33% { color: pink; }
+    67% { color: rgb(122, 199, 230); }
+    100% { color: yellow;}
+  }
+  
+.header {
+  margin: 20px;
+  padding: 10px 10px 20px;
+  width: 80%;
+  border: 3px double goldenrod;
+  background-color: rgba(255, 255, 0, 0.4);
+  box-shadow: 8px 8px 20px rgb(108, 136, 8);
+}
+
+.title  {
+    animation: blink 10s infinite;
+    color: rgb(29, 71, 29);
+    text-shadow: 4px 4px 8px rgb(19, 18, 18);
+}
