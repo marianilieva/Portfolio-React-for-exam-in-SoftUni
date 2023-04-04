@@ -1,0 +1,12 @@
+.physical   {
+    margin: 25px;
+    padding: 15px 15px 20px;
+    border-radius: 2ch;
+    border: 3px double orangered;
+    box-shadow: 0 0 5px rgb(240, 83, 35);
+    background-color: rgba(230, 74, 18, 0.6);
+}
+
+.physical h2    {
+    text-shadow: 2px 1px 3px white;
+}

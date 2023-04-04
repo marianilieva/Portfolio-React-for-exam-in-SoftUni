@@ -5,6 +5,8 @@ export default function Menu () {
     return(
         <div className={styles['menu']}>
             <Link to="/">Home</Link>
+            <Link to="/physical">Physical</Link>
+            <Link to="/mind">Mind</Link>
         </div>
     );
 }
