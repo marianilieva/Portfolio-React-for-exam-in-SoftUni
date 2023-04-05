@@ -2,7 +2,8 @@ import styles from './Mind.module.css';
 
 export default function Mind () {
     return (
-        <div>
+        <div className={styles['mind']}>
+            <h2 className={styles['title']}>Power of a Healing Mind</h2>
             <div>
                 <h3>Motivation</h3>
                 <p>
@@ -58,9 +59,21 @@ export default function Mind () {
             </div>
             <div>
                 <h3>Keeping ballance</h3>
+                <p>
+                    Ballance means as feeling joy, calmness and other feelings in normal 
+                    limits, as not going against the nature. If people live normal life, 
+                    they cannot feel need of unnormal acts.
+                </p>
             </div>
             <div>
                 <h3>Follow/make evolution</h3>
+                <p>
+                    Different people believe differet theories for how world appeared according
+                    to their beliefs, religion, education, culture. Some believe Darwin's theory, 
+                    others don't. But even now, more sciences start confirming the existance
+                    of evolution, now fashionable is development of mind in all its aspects
+                    as psichology, astrology, metaphysics and other.
+                </p>
             </div>
         </div>
     );

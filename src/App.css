@@ -2,9 +2,14 @@ a {
   margin: 5px;
 }
 
+a:hover {
+  transform: scale(1.1);
+  color: rgb(238, 219, 172);
+}
+
 .App {
   margin: 0%;
-  padding: 5px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
