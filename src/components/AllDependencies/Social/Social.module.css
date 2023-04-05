@@ -1,0 +1,20 @@
+.social   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social>div   {
+    margin: 1%;
+    padding: 2%;
+    width: 40%;
+    border: 4px double rgb(222, 245, 21);
+    border-radius: 5dvb;
+    background-color: rgba(71, 117, 218, 0.7);
+}
+
+@media (max-width: 768px)   {
+    .social>div   {
+        width: 90%;
+    }
+}

@@ -1,0 +1,20 @@
+.interests   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.interests>div   {
+    margin: 1%;
+    padding: 8%;
+    width: 30%;
+    border: 4px double rgb(50, 199, 63);
+    border-radius: 60%;
+    background-color: rgba(208, 240, 32, 0.7);
+}
+
+@media (max-width: 768px)   {
+    .interests>div   {
+        width: 90%;
+    }
+}
