@@ -7,6 +7,31 @@ a:hover {
   color: rgb(238, 219, 172);
 }
 
+form{
+  width: 50%;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  padding: 6px;
+  width: 200px;
+  border-radius: 5ch;
+  color: white;
+  background-color: rgb(78, 165, 78);
+  box-shadow: 2px 2px 3px rgb(31, 54, 31);
+}
+
+form input  {
+  margin: 5px 5px 10px;
+  padding: 5px;
+  border-radius: 5ch;
+  width: 100%;
+}
+
 .App {
   margin: 0%;
   padding: 0;
