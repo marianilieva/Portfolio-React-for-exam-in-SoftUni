@@ -5,7 +5,7 @@ export default function Footer () {
     return (
         <>
             <div className={styles['footerMenu']}>
-                <Link to="/login">Log in</Link>
+                <Link to="/register">Register</Link>
             </div>
             <div className={styles['footer']}>
                 Copyrights &copy; of the app and all of its features (including 

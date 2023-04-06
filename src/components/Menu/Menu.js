@@ -10,7 +10,7 @@ export default function Menu () {
             <Link to="/geographical">Geographical</Link>
             <Link to="/social">Social</Link>
             <Link to="/interests">Interests</Link>
-            <Link to="/login">Log in</Link>
+            <Link to="/register">Register</Link>
         </div>
     );
 }
