@@ -10,7 +10,8 @@ export default function Register ({onRegisterSubmit}) {
     });
 
     const onRegisterChange = (e) => {
-        setLocalRegister(state => ({ ...state, [e.target.name] : e.target.value}));
+       
+        setLocalRegister(state => ({ ...state, [e.target.name] : e.target.value}));console.log(localRegister);
     }
 
     return (
@@ -21,7 +22,7 @@ export default function Register ({onRegisterSubmit}) {
                     type='text' 
                     id='username' 
                     name='username'
-                    value={""} 
+                    value={localRegister.username} 
                     onChange={onRegisterChange}
                 />
                 <label htmlFor='password'>Password</label>
@@ -29,7 +30,7 @@ export default function Register ({onRegisterSubmit}) {
                     type='password' 
                     id='password' 
                     name='password'
-                    value={""} 
+                    value={localRegister.password} 
                     onChange={onRegisterChange}
                 />
                 <label htmlFor='confirmPass'>Confirm Password</label>
@@ -37,7 +38,7 @@ export default function Register ({onRegisterSubmit}) {
                     type='password' 
                     id='confirmPass'
                     name='confirmPass' 
-                    value={""} 
+                    value={localRegister.confirmPass} 
                     onChange={onRegisterChange} 
                 />
                 <button type='submit'>Register</button>
