@@ -1,22 +1,23 @@
-import { useState, useContext } from 'react';
-import { RegisteredProvider } from '../contexts/RegisteredContext';
+import React, { useState, useContext } from 'react';
+import { RegisteredContext } from '../contexts/RegisteredContext';
 import styles from './Register.module.css';
 
-export default function Register ({onRegisterSubmit}) {
+export default function Register () {
     const [localRegister, setLocalRegister] = useState({
         username: '',
         password: '',
         confirmPass: ''
     });
 
-    const onRegisterChange = (e) => {
-       
-        setLocalRegister(state => ({ ...state, [e.target.name] : e.target.value}));console.log(localRegister);
+    const onRegisterSubmitUse = useContext(RegisteredContext);
+
+    const onRegisterChange = (e) => {       
+        setLocalRegister(state => ({ ...state, [e.target.name] : e.target.value}));
     }
 
     return (
         <div className={styles['register']}>
-            <form onSubmit={onRegisterSubmit}>
+            <form onSubmit={(e) => onRegisterSubmitUse(e, localRegister)}>
                 <label htmlFor='username'>Username</label>
                 <input 
                     type='text' 
