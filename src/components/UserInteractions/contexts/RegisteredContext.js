@@ -4,11 +4,27 @@ export const RegisteredContext = createContext({});
 
 export const RegisteredProvider = ({children}) => {
 
-    const [registeredState, setRegisteredState] = useState({});
+    const [registeredState, setRegisteredState] = useState([]);
 
-    const onRegisterSubmit = (e) => {
+    const onRegisterSubmit = (e, localRegister) => {
         e.preventDefault();
-        console.log('registeredState');
+        if (localRegister.password == localRegister.confirmPass)    {
+            setRegisteredState (state => { 
+                let exists = false;
+                for (let i = 0; i < registeredState.length; i++)    {
+                    if (localRegister.username == registeredState[i].username)  {
+                        exists = true;
+                    }
+                }
+                if (!exists) {
+                    return state.push(localRegister);
+                }
+                else    {
+                    return state;
+                }
+            });
+        }
+        console.log(registeredState);
     }
 
     return (
