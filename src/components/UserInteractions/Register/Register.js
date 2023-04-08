@@ -17,7 +17,14 @@ export default function Register () {
 
     return (
         <div className={styles['register']}>
-            <form onSubmit={(e) => onRegisterSubmitUse(e, localRegister)}>
+            <form onSubmit={(e) => {
+                onRegisterSubmitUse(e, localRegister);
+                setLocalRegister({
+                    username: '',
+                    password: '',
+                    confirmPass: ''
+                });
+            }}>
                 <label htmlFor='username'>Username</label>
                 <input 
                     type='text' 
