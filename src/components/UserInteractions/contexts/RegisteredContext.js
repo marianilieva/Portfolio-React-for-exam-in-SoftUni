@@ -17,14 +17,13 @@ export const RegisteredProvider = ({children}) => {
                     }
                 }
                 if (!exists) {
-                    return state.push(localRegister);
+                    return state.concat(localRegister);
                 }
                 else    {
                     return state;
                 }
             });
         }
-        console.log(registeredState);
     }
 
     return (

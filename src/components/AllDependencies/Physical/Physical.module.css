@@ -2,8 +2,7 @@
     margin: 25px;
     padding: 15px 15px 20px;
     border-radius: 2ch;
-    border: 3px double orangered;
-    box-shadow: 0 0 5px rgb(240, 83, 35);
+    border: 4px double rgb(255, 238, 0);
     background-color: rgba(230, 74, 18, 0.6);
 }
 
