@@ -4,3 +4,11 @@
     display: flex;
     justify-content: center;
 }
+
+.register h2 {
+    margin: 30px;
+}
+
+.error {
+    color: red;
+}
