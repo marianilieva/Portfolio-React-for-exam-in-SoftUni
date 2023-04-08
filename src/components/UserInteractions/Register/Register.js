@@ -26,7 +26,6 @@ export default function Register () {
                 });
             }}>
                 <h2>Registration</h2>
-                <p id='error'>Already exists</p>
                 <label htmlFor='username'>Username</label>
                 <input 
                     type='email' 

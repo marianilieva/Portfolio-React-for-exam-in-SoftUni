@@ -6,10 +6,10 @@ export const RegisteredProvider = ({children}) => {
 
     const [registeredState, setRegisteredState] = useState([]); 
 
-    const onRegisterSubmit = (e, localRegister) => {
+    const onRegisterSubmit = (e, localRegister, form) => {
         e.preventDefault();
         if (localRegister.password == localRegister.confirmPass)    {
-            setRegisteredState (state => { 
+            setRegisteredState ((state) => { 
                 let exists = false;
                 for (let i = 0; i < registeredState.length; i++)    {
                     if (localRegister.email == registeredState[i].email)  {
@@ -17,21 +17,19 @@ export const RegisteredProvider = ({children}) => {
                     }
                 }
                 if (!exists) {
-                    const response = async (localRegister) => {
-                        await fetch('http://localhost:3030/users/register', {
-                            method: 'POST',
-                            headers: {
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify ({
-                                email : localRegister.email,
-                                password : localRegister.password
-                            })
+                    fetch('http://localhost:3030/users/register', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify ({                                
+                            email : localRegister.email,
+                            password : localRegister.password
                         })
-                        .then (data => data.json())
-                        .then (res => console.log(res))
-                        {/*}.then ( r => return state.concat(localRegister));*/}
-                    }
+                    })
+                    .then (data => data.json())
+                    .then ( r => {return state.concat(r)})
+                    .catch(error => console.error('Error:', error))
                 }
                 else    {
                     alert('Existing e-mail address');
@@ -41,7 +39,7 @@ export const RegisteredProvider = ({children}) => {
         }
         else {
             alert ("Passwords don't match");
-        }
+        }console.log(registeredState);
     }
 
     return (
