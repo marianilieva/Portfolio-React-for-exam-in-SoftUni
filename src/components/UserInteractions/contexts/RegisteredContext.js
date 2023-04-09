@@ -33,8 +33,13 @@ export const RegisteredProvider = ({children}) => {
                             password : localRegister.password
                         })
                     })
-                    .then (data => data.json())
-                    .then (res => console.log(res._id))
+                    .then (data => {
+                        return data.json();
+                    })
+                    .then (res => {
+                        if (registeredState.email == '') { 
+                        registeredState.email = res.email; 
+                    }})
                     .catch(error => console.error('Error:', error))
                 }
                 else    {
