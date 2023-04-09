@@ -4,13 +4,19 @@ export const RegisteredContext = createContext({});
 
 export const RegisteredProvider = ({children}) => {
 
-    const [registeredState, setRegisteredState] = useState([]); 
+    const [registeredState, setRegisteredState] = useState([{
+        email: '',
+        password: '',
+        _id: '',
+        accessToken: ''
+    }]); 
 
-    const onRegisterSubmit = (e, localRegister, form) => {
+    const onRegisterSubmit = (e, localRegister) => {
         e.preventDefault();
         if (localRegister.password == localRegister.confirmPass)    {
             setRegisteredState ((state) => { 
                 let exists = false;
+                let result = state;
                 for (let i = 0; i < registeredState.length; i++)    {
                     if (localRegister.email == registeredState[i].email)  {
                         exists = true;
@@ -28,18 +34,18 @@ export const RegisteredProvider = ({children}) => {
                         })
                     })
                     .then (data => data.json())
-                    .then ( r => {return state.concat(r)})
+                    .then (res => console.log(res._id))
                     .catch(error => console.error('Error:', error))
                 }
                 else    {
                     alert('Existing e-mail address');
-                    return state;
+                    return result;
                 }
             });
         }
         else {
             alert ("Passwords don't match");
-        }console.log(registeredState);
+        }
     }
 
     return (
