@@ -4,23 +4,15 @@ export const RegisteredContext = createContext({});
 
 export const RegisteredProvider = ({children}) => {
 
-    const [registeredState, setRegisteredState] = useState([{
-        email: '',
-        password: '',
-        _id: '',
-        accessToken: ''
-    }]); 
+    const [registeredState, setRegisteredState] = useState([{}]); 
 
     const onRegisterSubmit = (e, localRegister) => {
         e.preventDefault();
         if (localRegister.password == localRegister.confirmPass)    {
-            setRegisteredState ((state) => { 
-                let exists = false;
-                let result = state;
-                for (let i = 0; i < registeredState.length; i++)    {
-                    if (localRegister.email == registeredState[i].email)  {
-                        exists = true;
-                    }
+            let exists = false;
+            for (let i = 0; i < registeredState.length; i++)    {
+                if (localRegister.email === registeredState[i].email)  {                        
+                    exists = true;
                 }
                 if (!exists) {
                     fetch('http://localhost:3030/users/register', {
@@ -37,16 +29,19 @@ export const RegisteredProvider = ({children}) => {
                         return data.json();
                     })
                     .then (res => {
-                        if (registeredState.email == '') { 
-                        registeredState.email = res.email; 
-                    }})
+                        setRegisteredState(state => [...state, {
+                            email: res.email,
+                            password: res.password,
+                            _id: res._id,
+                            accessToken: res.accessToken
+                    }]); console.log(registeredState);
+                    })
                     .catch(error => console.error('Error:', error))
                 }
                 else    {
                     alert('Existing e-mail address');
-                    return result;
                 }
-            });
+            };
         }
         else {
             alert ("Passwords don't match");
